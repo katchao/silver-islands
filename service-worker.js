@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/silver-islands/precache-manifest.51a31b161af3c2f9c9168c25f3891903.js"
+  "/silver-islands/precache-manifest.cdd025ab0466f0e3f00f4d650659d239.js"
 );
 
 self.addEventListener('message', (event) => {
