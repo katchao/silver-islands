@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/silver-islands/static/css/main.441014fe.chunk.css",
-    "main.js": "/silver-islands/static/js/main.f0dffffc.chunk.js",
-    "main.js.map": "/silver-islands/static/js/main.f0dffffc.chunk.js.map",
+    "main.js": "/silver-islands/static/js/main.285c90b6.chunk.js",
+    "main.js.map": "/silver-islands/static/js/main.285c90b6.chunk.js.map",
     "runtime-main.js": "/silver-islands/static/js/runtime-main.04d8e526.js",
     "runtime-main.js.map": "/silver-islands/static/js/runtime-main.04d8e526.js.map",
     "static/js/2.31591829.chunk.js": "/silver-islands/static/js/2.31591829.chunk.js",
     "static/js/2.31591829.chunk.js.map": "/silver-islands/static/js/2.31591829.chunk.js.map",
     "index.html": "/silver-islands/index.html",
-    "precache-manifest.fabaac4f752dcfcefd295f4acc1fef30.js": "/silver-islands/precache-manifest.fabaac4f752dcfcefd295f4acc1fef30.js",
+    "precache-manifest.cc6c1d363b2c03cf89a1f5369d9e3808.js": "/silver-islands/precache-manifest.cc6c1d363b2c03cf89a1f5369d9e3808.js",
     "service-worker.js": "/silver-islands/service-worker.js",
     "static/css/main.441014fe.chunk.css.map": "/silver-islands/static/css/main.441014fe.chunk.css.map",
     "static/js/2.31591829.chunk.js.LICENSE.txt": "/silver-islands/static/js/2.31591829.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.04d8e526.js",
     "static/js/2.31591829.chunk.js",
     "static/css/main.441014fe.chunk.css",
-    "static/js/main.f0dffffc.chunk.js"
+    "static/js/main.285c90b6.chunk.js"
   ]
 }
