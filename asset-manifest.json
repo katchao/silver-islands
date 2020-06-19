@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/silver-islands/static/css/main.921e061b.chunk.css",
+    "main.css": "/silver-islands/static/css/main.a26d2da0.chunk.css",
     "main.js": "/silver-islands/static/js/main.84c8d392.chunk.js",
     "main.js.map": "/silver-islands/static/js/main.84c8d392.chunk.js.map",
     "runtime-main.js": "/silver-islands/static/js/runtime-main.04d8e526.js",
@@ -8,9 +8,9 @@
     "static/js/2.68f41925.chunk.js": "/silver-islands/static/js/2.68f41925.chunk.js",
     "static/js/2.68f41925.chunk.js.map": "/silver-islands/static/js/2.68f41925.chunk.js.map",
     "index.html": "/silver-islands/index.html",
-    "precache-manifest.a0de0d51326f577d89f987386e7e6f5e.js": "/silver-islands/precache-manifest.a0de0d51326f577d89f987386e7e6f5e.js",
+    "precache-manifest.2a2f9bbae3feeacdef7fada39ce150e7.js": "/silver-islands/precache-manifest.2a2f9bbae3feeacdef7fada39ce150e7.js",
     "service-worker.js": "/silver-islands/service-worker.js",
-    "static/css/main.921e061b.chunk.css.map": "/silver-islands/static/css/main.921e061b.chunk.css.map",
+    "static/css/main.a26d2da0.chunk.css.map": "/silver-islands/static/css/main.a26d2da0.chunk.css.map",
     "static/js/2.68f41925.chunk.js.LICENSE.txt": "/silver-islands/static/js/2.68f41925.chunk.js.LICENSE.txt",
     "static/media/10pressure.jpg": "/silver-islands/static/media/10pressure.70eb666a.jpg",
     "static/media/12pressurepoints.jpg": "/silver-islands/static/media/12pressurepoints.e4b81688.jpg",
@@ -60,7 +60,7 @@
   "entrypoints": [
     "static/js/runtime-main.04d8e526.js",
     "static/js/2.68f41925.chunk.js",
-    "static/css/main.921e061b.chunk.css",
+    "static/css/main.a26d2da0.chunk.css",
     "static/js/main.84c8d392.chunk.js"
   ]
 }
