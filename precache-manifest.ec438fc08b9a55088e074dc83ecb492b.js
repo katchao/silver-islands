@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "447d370f04bbda1a85650f5d45bbb7ce",
+    "revision": "327b0e2545f6eb58aff51c259390432c",
     "url": "/silver-islands/index.html"
   },
   {
-    "revision": "8eafe02a6fc34a52936a",
-    "url": "/silver-islands/static/css/main.8de87266.chunk.css"
+    "revision": "15ee638f292027c89f70",
+    "url": "/silver-islands/static/css/main.6d4918d0.chunk.css"
   },
   {
     "revision": "2ecdfc778a7c66e6db99",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/silver-islands/static/js/2.e641fe7a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8eafe02a6fc34a52936a",
-    "url": "/silver-islands/static/js/main.b39f7f39.chunk.js"
+    "revision": "15ee638f292027c89f70",
+    "url": "/silver-islands/static/js/main.38f182b3.chunk.js"
   },
   {
     "revision": "0c8faa5df6d923b656dc",
@@ -257,7 +257,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "9e15810ef2c9a284e0bae6ceb83af13f",
-    "url": "/silver-islands/static/media/bulbasaur-ani.9e15810e.gif"
+    "url": "/silver-islands/static/media/bulbasaur.9e15810e.gif"
   },
   {
     "revision": "25287818009f2ce1efd608fa0181dc6f",
@@ -377,7 +377,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "6cc77694a8f9ce30c733ca1a302b2ea6",
-    "url": "/silver-islands/static/media/eevee-ani-fedora.6cc77694.gif"
+    "url": "/silver-islands/static/media/eevee-fedora.6cc77694.gif"
   },
   {
     "revision": "1ee8ab6a6aac90ebb3296b0e27803ae9",
@@ -505,7 +505,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "b03f227da8e3599dc29a21751555d1cd",
-    "url": "/silver-islands/static/media/mew-ani.b03f227d.gif"
+    "url": "/silver-islands/static/media/mew.b03f227d.gif"
   },
   {
     "revision": "796e5802d90399a27013ecbd2b1e408a",
@@ -521,7 +521,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "1f1585782962db4fdcc5e64419aedb61",
-    "url": "/silver-islands/static/media/munchlax-ani.1f158578.gif"
+    "url": "/silver-islands/static/media/munchlax.1f158578.gif"
   },
   {
     "revision": "9bf653edf846aa9d09e332d8bb0088b1",
@@ -613,7 +613,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "475f7e97bbae29c3c64af2b0233e4e2b",
-    "url": "/silver-islands/static/media/snorlax-ani.475f7e97.gif"
+    "url": "/silver-islands/static/media/snorlax.475f7e97.gif"
   },
   {
     "revision": "068bf5aa1245d5634dfbe6dd5e693abb",
