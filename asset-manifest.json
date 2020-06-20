@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/silver-islands/static/css/main.6d4918d0.chunk.css",
-    "main.js": "/silver-islands/static/js/main.38f182b3.chunk.js",
-    "main.js.map": "/silver-islands/static/js/main.38f182b3.chunk.js.map",
+    "main.css": "/silver-islands/static/css/main.7d37415d.chunk.css",
+    "main.js": "/silver-islands/static/js/main.af87457a.chunk.js",
+    "main.js.map": "/silver-islands/static/js/main.af87457a.chunk.js.map",
     "runtime-main.js": "/silver-islands/static/js/runtime-main.04d8e526.js",
     "runtime-main.js.map": "/silver-islands/static/js/runtime-main.04d8e526.js.map",
     "static/js/2.e641fe7a.chunk.js": "/silver-islands/static/js/2.e641fe7a.chunk.js",
     "static/js/2.e641fe7a.chunk.js.map": "/silver-islands/static/js/2.e641fe7a.chunk.js.map",
     "index.html": "/silver-islands/index.html",
-    "precache-manifest.ec438fc08b9a55088e074dc83ecb492b.js": "/silver-islands/precache-manifest.ec438fc08b9a55088e074dc83ecb492b.js",
+    "precache-manifest.558bdfc3069235080855eb307d0a00b2.js": "/silver-islands/precache-manifest.558bdfc3069235080855eb307d0a00b2.js",
     "service-worker.js": "/silver-islands/service-worker.js",
-    "static/css/main.6d4918d0.chunk.css.map": "/silver-islands/static/css/main.6d4918d0.chunk.css.map",
+    "static/css/main.7d37415d.chunk.css.map": "/silver-islands/static/css/main.7d37415d.chunk.css.map",
     "static/js/2.e641fe7a.chunk.js.LICENSE.txt": "/silver-islands/static/js/2.e641fe7a.chunk.js.LICENSE.txt",
     "static/media/10pressure.jpg": "/silver-islands/static/media/10pressure.70eb666a.jpg",
     "static/media/12pressurepoints.jpg": "/silver-islands/static/media/12pressurepoints.e4b81688.jpg",
@@ -69,7 +69,7 @@
     "static/media/boss-squirtle.gif": "/silver-islands/static/media/boss-squirtle.d8540dbf.gif",
     "static/media/boss-squirtle2.gif": "/silver-islands/static/media/boss-squirtle2.39a0505b.gif",
     "static/media/boss-squirtle2_thumb.gif": "/silver-islands/static/media/boss-squirtle2_thumb.d18b4046.gif",
-    "static/media/boss-squritle_thumb.gif": "/silver-islands/static/media/boss-squritle_thumb.aeb2344f.gif",
+    "static/media/boss-squirtle_thumb.gif": "/silver-islands/static/media/boss-squirtle_thumb.aeb2344f.gif",
     "static/media/bulbasaur.gif": "/silver-islands/static/media/bulbasaur.9e15810e.gif",
     "static/media/bulbasaur_thumb.gif": "/silver-islands/static/media/bulbasaur_thumb.25287818.gif",
     "static/media/bunnelby.png": "/silver-islands/static/media/bunnelby.b5adcccb.png",
@@ -123,7 +123,7 @@
     "static/media/jolteon_thumb.png": "/silver-islands/static/media/jolteon_thumb.cbd7ecde.png",
     "static/media/lanturn.png": "/silver-islands/static/media/lanturn.38063b00.png",
     "static/media/lanturn_thumb.png": "/silver-islands/static/media/lanturn_thumb.5e23d6b0.png",
-    "static/media/latios-logo.svg": "/silver-islands/static/media/latios-logo.3c71d407.svg",
+    "static/media/Header.scss": "/silver-islands/static/media/latios-logo.3c71d407.svg",
     "static/media/latios.png": "/silver-islands/static/media/latios.f46f89bf.png",
     "static/media/latios_thumb.png": "/silver-islands/static/media/latios_thumb.53c4bbe4.png",
     "static/media/leafeon.png": "/silver-islands/static/media/leafeon.e1f9e4ce.png",
@@ -181,7 +181,7 @@
   "entrypoints": [
     "static/js/runtime-main.04d8e526.js",
     "static/js/2.e641fe7a.chunk.js",
-    "static/css/main.6d4918d0.chunk.css",
-    "static/js/main.38f182b3.chunk.js"
+    "static/css/main.7d37415d.chunk.css",
+    "static/js/main.af87457a.chunk.js"
   ]
 }

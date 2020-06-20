@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "327b0e2545f6eb58aff51c259390432c",
+    "revision": "dc2a4fe9e78235d329556279b64e7ba9",
     "url": "/silver-islands/index.html"
   },
   {
-    "revision": "15ee638f292027c89f70",
-    "url": "/silver-islands/static/css/main.6d4918d0.chunk.css"
+    "revision": "def9293c93ef77dcd454",
+    "url": "/silver-islands/static/css/main.7d37415d.chunk.css"
   },
   {
     "revision": "2ecdfc778a7c66e6db99",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/silver-islands/static/js/2.e641fe7a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "15ee638f292027c89f70",
-    "url": "/silver-islands/static/js/main.38f182b3.chunk.js"
+    "revision": "def9293c93ef77dcd454",
+    "url": "/silver-islands/static/js/main.af87457a.chunk.js"
   },
   {
     "revision": "0c8faa5df6d923b656dc",
@@ -253,7 +253,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "aeb2344fc026221ea4ca39b16f1eec8d",
-    "url": "/silver-islands/static/media/boss-squritle_thumb.aeb2344f.gif"
+    "url": "/silver-islands/static/media/boss-squirtle_thumb.aeb2344f.gif"
   },
   {
     "revision": "9e15810ef2c9a284e0bae6ceb83af13f",
