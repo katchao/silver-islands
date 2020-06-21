@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dc2a4fe9e78235d329556279b64e7ba9",
+    "revision": "6b31b5b278aa38f24cac9f74e46d79b2",
     "url": "/silver-islands/index.html"
   },
   {
-    "revision": "def9293c93ef77dcd454",
-    "url": "/silver-islands/static/css/main.7d37415d.chunk.css"
+    "revision": "2a5788849ff58236e7b2",
+    "url": "/silver-islands/static/css/main.51c3438f.chunk.css"
   },
   {
-    "revision": "2ecdfc778a7c66e6db99",
-    "url": "/silver-islands/static/js/2.e641fe7a.chunk.js"
+    "revision": "d7b44f059d9927971919",
+    "url": "/silver-islands/static/js/2.e98e17d7.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/silver-islands/static/js/2.e641fe7a.chunk.js.LICENSE.txt"
+    "url": "/silver-islands/static/js/2.e98e17d7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "def9293c93ef77dcd454",
-    "url": "/silver-islands/static/js/main.af87457a.chunk.js"
+    "revision": "2a5788849ff58236e7b2",
+    "url": "/silver-islands/static/js/main.ce39f647.chunk.js"
   },
   {
     "revision": "0c8faa5df6d923b656dc",
@@ -468,8 +468,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/silver-islands/static/media/lanturn_thumb.5e23d6b0.png"
   },
   {
-    "revision": "3c71d407e4873325e9e93d72d1c99e2f",
-    "url": "/silver-islands/static/media/latios-logo.3c71d407.svg"
+    "revision": "994d1267864106705c7fef1ebb3235a1",
+    "url": "/silver-islands/static/media/latios-logo.994d1267.svg"
   },
   {
     "revision": "f46f89bfcdfe50fbd43940a595e309d4",
