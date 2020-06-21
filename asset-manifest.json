@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/silver-islands/static/css/main.51c3438f.chunk.css",
-    "main.js": "/silver-islands/static/js/main.ce39f647.chunk.js",
-    "main.js.map": "/silver-islands/static/js/main.ce39f647.chunk.js.map",
+    "main.css": "/silver-islands/static/css/main.bfe5f071.chunk.css",
+    "main.js": "/silver-islands/static/js/main.01cee550.chunk.js",
+    "main.js.map": "/silver-islands/static/js/main.01cee550.chunk.js.map",
     "runtime-main.js": "/silver-islands/static/js/runtime-main.04d8e526.js",
     "runtime-main.js.map": "/silver-islands/static/js/runtime-main.04d8e526.js.map",
-    "static/js/2.e98e17d7.chunk.js": "/silver-islands/static/js/2.e98e17d7.chunk.js",
-    "static/js/2.e98e17d7.chunk.js.map": "/silver-islands/static/js/2.e98e17d7.chunk.js.map",
+    "static/js/2.1ca069b2.chunk.js": "/silver-islands/static/js/2.1ca069b2.chunk.js",
+    "static/js/2.1ca069b2.chunk.js.map": "/silver-islands/static/js/2.1ca069b2.chunk.js.map",
     "index.html": "/silver-islands/index.html",
-    "precache-manifest.3478a113d9216268074bccaa95248360.js": "/silver-islands/precache-manifest.3478a113d9216268074bccaa95248360.js",
+    "precache-manifest.0a68b102f544089b3a1ec49339b0e05a.js": "/silver-islands/precache-manifest.0a68b102f544089b3a1ec49339b0e05a.js",
     "service-worker.js": "/silver-islands/service-worker.js",
-    "static/css/main.51c3438f.chunk.css.map": "/silver-islands/static/css/main.51c3438f.chunk.css.map",
-    "static/js/2.e98e17d7.chunk.js.LICENSE.txt": "/silver-islands/static/js/2.e98e17d7.chunk.js.LICENSE.txt",
+    "static/css/main.bfe5f071.chunk.css.map": "/silver-islands/static/css/main.bfe5f071.chunk.css.map",
+    "static/js/2.1ca069b2.chunk.js.LICENSE.txt": "/silver-islands/static/js/2.1ca069b2.chunk.js.LICENSE.txt",
     "static/media/10pressure.jpg": "/silver-islands/static/media/10pressure.70eb666a.jpg",
     "static/media/12pressurepoints.jpg": "/silver-islands/static/media/12pressurepoints.e4b81688.jpg",
     "static/media/13pressuredone.jpg": "/silver-islands/static/media/13pressuredone.79f5aeb8.jpg",
@@ -180,8 +180,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.04d8e526.js",
-    "static/js/2.e98e17d7.chunk.js",
-    "static/css/main.51c3438f.chunk.css",
-    "static/js/main.ce39f647.chunk.js"
+    "static/js/2.1ca069b2.chunk.js",
+    "static/css/main.bfe5f071.chunk.css",
+    "static/js/main.01cee550.chunk.js"
   ]
 }
