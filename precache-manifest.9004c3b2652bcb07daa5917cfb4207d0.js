@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "146d2b092050ec5cd34a6231ab3a6861",
+    "revision": "ce7f75ccdc49c215d70362924311970a",
     "url": "/silver-islands/index.html"
   },
   {
-    "revision": "ef89b3d6d6860e56c3a2",
-    "url": "/silver-islands/static/css/main.bfe5f071.chunk.css"
+    "revision": "f2ca2658843263a04ab7",
+    "url": "/silver-islands/static/css/main.60aab0a1.chunk.css"
   },
   {
     "revision": "ae1b843088546384f73b",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/silver-islands/static/js/2.1ca069b2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ef89b3d6d6860e56c3a2",
-    "url": "/silver-islands/static/js/main.01cee550.chunk.js"
+    "revision": "f2ca2658843263a04ab7",
+    "url": "/silver-islands/static/js/main.4baaefa7.chunk.js"
   },
   {
     "revision": "0c8faa5df6d923b656dc",
