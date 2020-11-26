@@ -1,0 +1,30 @@
+$violet: #ea1fa9;
+
+@font-face {
+  font-family: "PkmnGame";
+  src: local("PkmnGame"), url("/fonts/pkmn-game.ttf") format("truetype");
+}
+
+@mixin nav-link-bg($start-color, $end-color) {
+  background: $start-color;
+  background: repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.15) 1px,
+      transparent 1px,
+      transparent 6px
+    ),
+    linear-gradient(0deg, $start-color, $end-color 100%);
+}
+
+%font-weight-900 {
+  font-weight: 900;
+}
+
+%game-font {
+  font-family: PkmnGame;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-shadow: -2px 2px 0px #4d4d4d;
+  text-transform: uppercase;
+}

@@ -1,0 +1,75 @@
+@import "components/utils/commonStyles.scss";
+
+.ContentContainer {
+   font-family: "Noto Sans JP", sans-serif;
+   background: #fff;
+}
+
+.App-content {
+   margin: auto;
+   width: 70%;
+   color: #292929;
+
+   h1 {
+      text-align: center;
+      @extend %font-weight-900;
+      border-bottom: 7px solid #ee31f1;
+      display: inline-block;
+      letter-spacing: 1px;
+      margin-left: 13%;
+      padding-bottom: 0px;
+   }
+
+   h2 {
+      @extend %font-weight-900;
+   }
+
+   h3 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      color: $violet;
+   }
+
+   h3::before {
+      content: "\e5cc";
+      font-family: "Material Icons";
+      vertical-align: -10%;
+   }
+
+   blockquote {
+      background: #fffee0;
+      padding: 0.8rem;
+      border-radius: 15px;
+      box-shadow: -8px 8px 0px 0px #f2e9c2;
+      font-size: 0.9rem;
+      color: #4a4a46;
+   }
+
+   a:link,
+   a:visited,
+   a:active {
+      color: red;
+      text-decoration: none;
+      font-weight: bold;
+   }
+
+   a:hover {
+      background: red;
+      color: white;
+   }
+}
+
+footer {
+   background: #e6e6e6;
+   margin-top: 2rem;
+   color: #292929;
+   padding: 3rem 4rem 2rem;
+   font-size: 0.8rem;
+   text-align: center;
+}
+
+@media (max-width: 850px) {
+   .App-content {
+      width: 100%;
+   }
+}
