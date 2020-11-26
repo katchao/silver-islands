@@ -3,11 +3,14 @@ import styles from "./SearchBar.module.scss";
 
 const SearchBar = ({ input, onInputChange }) => {
    return (
-      <input
-         value={input}
-         placeholder={"Search..."}
-         onChange={(e) => onInputChange(e.target.value)}
-      />
+      <div className={styles.Wrapper}>
+         <input
+            value={input}
+            placeholder={"Search..."}
+            onChange={(e) => onInputChange(e.target.value)}
+         />
+         <i className={`material-icons ${styles.SearchIcon}`}>search</i>
+      </div>
    );
 };
 

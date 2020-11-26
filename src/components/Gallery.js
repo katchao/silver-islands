@@ -85,11 +85,14 @@ function Gallery({ type }) {
    return (
       <div className={styles.ContentContainer}>
          <h1>{defaultTitle}</h1>
-         <SearchBar onInputChange={handleSearchTermChange} />
-         <p>Select a thumbnail to view full size.</p>
+
          <Modal show={!!shownImage} closeModal={handleClose} title={title}>
             <FullsizeImage src={shownImage} displayName={title} />
          </Modal>
+
+         <div className={styles.SearchBar}>
+            <SearchBar onInputChange={handleSearchTermChange} />
+         </div>
 
          <div className={`${styles.ThumbnailContainer}`} ref={thumbnailsRef}>
             {Object.keys(imagesListMap)
