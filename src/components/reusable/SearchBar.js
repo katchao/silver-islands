@@ -1,6 +1,5 @@
-import { useState } from "react";
-
-import styles from "components/reusable/SearchBar.module.scss";
+import PropTypes from "prop-types";
+import styles from "./SearchBar.module.scss";
 
 const SearchBar = ({ input, onInputChange }) => {
    return (
@@ -10,6 +9,11 @@ const SearchBar = ({ input, onInputChange }) => {
          onChange={(e) => onInputChange(e.target.value)}
       />
    );
+};
+
+SearchBar.propTypes = {
+   onInputChange: PropTypes.func.isRequired,
+   input: PropTypes.string,
 };
 
 export default SearchBar;

@@ -5,6 +5,7 @@ import {
    getPrettifiedNameFromFile,
 } from "components/utils/fileUtils";
 import SearchBar from "components/reusable/SearchBar";
+import Modal from "components/reusable/Modal";
 import _ from "lodash";
 
 import styles from "components/Gallery.module.scss";
@@ -70,9 +71,8 @@ function Gallery({ type }) {
       setTitle(displayName);
    };
 
-   const handleOnClear = (e) => {
+   const handleClose = (e) => {
       setShownImage(null);
-      setTitle(defaultTitle);
    };
 
    const handleSearchTermChange = (newInput) => {
@@ -82,70 +82,40 @@ function Gallery({ type }) {
       setImagesListMap(_.pick(fullImagesList, filteredKeys));
    };
 
-   const sidebarClass = shownImage ? styles.Sidebar : "";
-
    return (
       <div className={styles.ContentContainer}>
-         <h1>{title}</h1>
+         <h1>{defaultTitle}</h1>
          <SearchBar onInputChange={handleSearchTermChange} />
          <p>Select a thumbnail to view full size.</p>
-         <div className={styles.GalleryContainer}>
-            {shownImage && (
-               <FullsizeImage
-                  src={shownImage}
-                  displayName={title}
-                  handleOnClear={handleOnClear}
-               />
-            )}
+         <Modal show={!!shownImage} closeModal={handleClose} title={title}>
+            <FullsizeImage src={shownImage} displayName={title} />
+         </Modal>
 
-            <div className={styles.Side}>
-               <div
-                  className={`${styles.ThumbnailContainer} ${sidebarClass}`}
-                  ref={thumbnailsRef}
-               >
-                  {Object.keys(imagesListMap)
-                     .filter((filename) => filename.includes(THUMB_SUFFIX))
-                     .map((thumbnail, i) => {
-                        const indexOfFullsize = thumbnail.replace(
-                           THUMB_SUFFIX,
-                           ""
-                        );
-                        const displayName = getPrettifiedNameFromFile(
-                           indexOfFullsize
-                        );
-                        return (
-                           <Thumbnail
-                              key={i}
-                              src={imagesListMap[thumbnail]}
-                              displayName={displayName}
-                              onClick={(e) =>
-                                 handleThumbnailClick(
-                                    e,
-                                    indexOfFullsize,
-                                    displayName
-                                 )
-                              }
-                           />
-                        );
-                     })}
-               </div>
-               {shownImage && showScrollBottom && (
-                  <div className={styles.Scroll}>
-                     Scroll
-                     <i className={`material-icons ${styles.ExpandMoreIcon}`}>
-                        expand_more
-                     </i>
-                  </div>
-               )}
-            </div>
+         <div className={`${styles.ThumbnailContainer}`} ref={thumbnailsRef}>
+            {Object.keys(imagesListMap)
+               .filter((filename) => filename.includes(THUMB_SUFFIX))
+               .map((thumbnail, i) => {
+                  const indexOfFullsize = thumbnail.replace(THUMB_SUFFIX, "");
+                  const displayName = getPrettifiedNameFromFile(
+                     indexOfFullsize
+                  );
+                  return (
+                     <Thumbnail
+                        key={i}
+                        src={imagesListMap[thumbnail]}
+                        displayName={displayName}
+                        onClick={(e) =>
+                           handleThumbnailClick(e, indexOfFullsize, displayName)
+                        }
+                     />
+                  );
+               })}
          </div>
       </div>
    );
 }
 
-function FullsizeImage({ src, handleOnClear, displayName }) {
-   const imageRef = useRef(null);
-
+function FullsizeImage({ src, displayName }) {
    // generate a random BG color
    const classNames = [
       styles.Blue,
@@ -156,26 +126,10 @@ function FullsizeImage({ src, handleOnClear, displayName }) {
    ];
    const bgColor = classNames[Math.floor(Math.random() * classNames.length)];
 
-   useEffect(() => {
-      imageRef.current.scrollIntoView({
-         behavior: "smooth",
-         block: "start",
-      });
-   });
    return (
-      <div className={styles.FullsizeImageContainer} ref={imageRef}>
-         <div className={styles.Clear}>
-            <i
-               onClick={handleOnClear}
-               className={`material-icons ${styles.ClearIcon}`}
-            >
-               clear
-            </i>
-         </div>
-         <div className={styles.FullsizeImage}>
-            <div className={`${styles.FullsizeImageInner} ${bgColor}`}>
-               <img src={src} alt={displayName} />
-            </div>
+      <div className={styles.FullsizeImage}>
+         <div className={`${styles.FullsizeImageInner} ${bgColor}`}>
+            <img src={src} alt={displayName} />
          </div>
       </div>
    );
