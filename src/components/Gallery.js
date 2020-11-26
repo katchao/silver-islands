@@ -1,74 +1,30 @@
-import React, { useState, useRef, useEffect } from "react";
-import { GalleryType, THUMB_SUFFIX } from "components/utils/constants";
-import {
-   generateFilenameMap,
-   getPrettifiedNameFromFile,
-} from "components/utils/fileUtils";
+import React, { useState, useRef } from "react";
+import { GalleryType } from "components/utils/constants";
+import { getGalleryImages } from "components/utils/fileUtils";
 import SearchBar from "components/reusable/SearchBar";
 import Modal from "components/reusable/Modal";
 import _ from "lodash";
+import styles from "./Gallery.module.scss";
 
-import styles from "components/Gallery.module.scss";
-
-// creates a map of image name to URL
-const getGalleryImages = (gallery, context) => {
-   let images = new Map();
-   if (gallery === GalleryType.MAIN) {
-      images = generateFilenameMap(
-         require.context("images/stockart/", false, /\.(png|jpe?g|svg|gif)$/)
-      );
-   } else if (gallery === GalleryType.ICONS) {
-      images = generateFilenameMap(
-         require.context(
-            "images/animated-icons/",
-            false,
-            /\.(png|jpe?g|svg|gif)$/
-         )
-      );
-   }
-   return images;
-};
+export class GalleryImage {
+   fullsizeName: string;
+   fullsizeSrc: string;
+   thumbnailSrc: string;
+   thumbnailName: string;
+   displayName: string;
+}
 
 function Gallery({ type }) {
    const defaultTitle =
       type === GalleryType.ICONS ? "Animated Icons" : "Art Gallery";
 
-   const getContext = (type) => {
-      switch (type) {
-         case GalleryType.ICONS:
-            return require.context(
-               "images/animated-icons/",
-               false,
-               /\.(png|jpe?g|svg|gif)$/
-            );
-         case GalleryType.MAIN:
-         default:
-            return require.context(
-               "images/stockart/",
-               false,
-               /\.(png|jpe?g|svg|gif)$/
-            );
-      }
-   };
-
-   const fullImagesList = getGalleryImages(type, getContext(type));
-   const [imagesListMap, setImagesListMap] = useState({ ...fullImagesList });
+   const completeImagesList = getGalleryImages(type);
+   const [imagesList, setImagesList] = useState([...completeImagesList]);
    const [shownImage, setShownImage] = useState(null);
-   const [title, setTitle] = useState(defaultTitle);
-   const [showScrollBottom, setShowScrollBottom] = useState(false);
    const thumbnailsRef = useRef(null);
-   useEffect(() => {
-      if (shownImage) {
-         setShowScrollBottom(
-            thumbnailsRef.current.scrollHeight >
-               thumbnailsRef.current.clientHeight
-         );
-      }
-   }, [shownImage]);
 
-   const handleThumbnailClick = (e, indexOfFullsize, displayName) => {
-      setShownImage(imagesListMap[indexOfFullsize]);
-      setTitle(displayName);
+   const handleThumbnailClick = (e, image) => {
+      setShownImage(image);
    };
 
    const handleClose = (e) => {
@@ -76,43 +32,44 @@ function Gallery({ type }) {
    };
 
    const handleSearchTermChange = (newInput) => {
-      const filteredKeys = Object.keys(fullImagesList).filter((key) =>
+      const filteredKeys = Object.keys(completeImagesList).filter((key) =>
          key.startsWith(newInput)
       );
-      setImagesListMap(_.pick(fullImagesList, filteredKeys));
+      setImagesList(_.pick(completeImagesList, filteredKeys));
    };
 
    return (
       <div className={styles.ContentContainer}>
          <h1>{defaultTitle}</h1>
 
-         <Modal show={!!shownImage} closeModal={handleClose} title={title}>
-            <FullsizeImage src={shownImage} displayName={title} />
-         </Modal>
+         {shownImage && (
+            <Modal
+               show={!!shownImage}
+               closeModal={handleClose}
+               title={shownImage.displayName}
+            >
+               <FullsizeImage
+                  src={shownImage.fullsizeSrc}
+                  displayName={shownImage.fullsizeName}
+               />
+            </Modal>
+         )}
 
          <div className={styles.SearchBar}>
             <SearchBar onInputChange={handleSearchTermChange} />
          </div>
 
          <div className={`${styles.ThumbnailContainer}`} ref={thumbnailsRef}>
-            {Object.keys(imagesListMap)
-               .filter((filename) => filename.includes(THUMB_SUFFIX))
-               .map((thumbnail, i) => {
-                  const indexOfFullsize = thumbnail.replace(THUMB_SUFFIX, "");
-                  const displayName = getPrettifiedNameFromFile(
-                     indexOfFullsize
-                  );
-                  return (
-                     <Thumbnail
-                        key={i}
-                        src={imagesListMap[thumbnail]}
-                        displayName={displayName}
-                        onClick={(e) =>
-                           handleThumbnailClick(e, indexOfFullsize, displayName)
-                        }
-                     />
-                  );
-               })}
+            {imagesList.map((image, i) => {
+               return (
+                  <Thumbnail
+                     key={i}
+                     src={image.thumbnailSrc}
+                     displayName={imagesList.displayName}
+                     onClick={(e) => handleThumbnailClick(e, image)}
+                  />
+               );
+            })}
          </div>
       </div>
    );

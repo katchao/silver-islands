@@ -9,7 +9,6 @@ const imageFilenameMap = generateFilenameMap(
 );
 
 export default function Tutorial(props) {
-   console.log("tutorial loaded");
    return (
       <div>
          <h1>Art Tutorial</h1>
