@@ -22,7 +22,6 @@ const getGalleryImages = (gallery, context) => {
          )
       );
    }
-   console.log(`images: ${JSON.stringify(images)}`);
    return images;
 };
 
@@ -102,7 +101,6 @@ function Gallery({ type }) {
                         const displayName = getPrettifiedNameFromFile(
                            indexOfFullsize
                         );
-                        console.log(`indexOfFullsize ${indexOfFullsize}`);
                         return (
                            <Thumbnail
                               key={i}

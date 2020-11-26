@@ -1,8 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, Suspense, lazy } from "react";
 import "App.scss";
 import Header from "components/Header";
-import Tutorial from "components/Tutorial";
-import Gallery from "components/Gallery";
 import { GalleryType } from "components/utils/constants";
 import {
    BrowserRouter as Router,
@@ -10,6 +8,10 @@ import {
    Route,
    Redirect,
 } from "react-router-dom";
+import ClipLoader from "react-spinners/ClipLoader";
+
+const Tutorial = lazy(() => import("components/Tutorial"));
+const Gallery = lazy(() => import("components/Gallery"));
 
 function App() {
    useEffect(() => {
@@ -22,36 +24,38 @@ function App() {
             <Header />
 
             <main className="App-content">
-               <Switch>
-                  <Route path="/tutorial" render={() => <Tutorial />} />
-                  <Route
-                     path="/art-gallery"
-                     render={() => (
-                        <Gallery
-                           type={GalleryType.MAIN}
-                           key={window.location.pathname}
-                        />
-                     )}
-                  />
-                  <Route
-                     path="/icons"
-                     render={() => (
-                        <Gallery
-                           type={GalleryType.ICONS}
-                           key={window.location.pathname}
-                        />
-                     )}
-                  />
-                  <Route
-                     exact
-                     path="/"
-                     render={() => <Redirect to="/art-gallery" />}
-                  />
-                  *
-                  <Route path="*">
-                     <NoMatch />
-                  </Route>
-               </Switch>
+               <Suspense fallback={<Loading />}>
+                  <Switch>
+                     <Route path="/tutorial" render={() => <Tutorial />} />
+                     <Route
+                        path="/art-gallery"
+                        render={() => (
+                           <Gallery
+                              type={GalleryType.MAIN}
+                              key={window.location.pathname}
+                           />
+                        )}
+                     />
+                     <Route
+                        path="/icons"
+                        render={() => (
+                           <Gallery
+                              type={GalleryType.ICONS}
+                              key={window.location.pathname}
+                           />
+                        )}
+                     />
+                     <Route
+                        exact
+                        path="/"
+                        render={() => <Redirect to="/art-gallery" />}
+                     />
+                     *
+                     <Route path="*">
+                        <NoMatch />
+                     </Route>
+                  </Switch>
+               </Suspense>
             </main>
          </Router>
          <footer>
@@ -60,6 +64,16 @@ function App() {
             copyright © 2020 Nintendo GAME FREAK. This site is purely a fan made
             work and is in no way official.
          </footer>
+      </div>
+   );
+}
+
+function Loading() {
+   return (
+      <div className="LoadingPage">
+         <div className="SpinnerContainer">
+            <ClipLoader size={100} color={"#ea1fa9"} />
+         </div>
       </div>
    );
 }

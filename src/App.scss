@@ -3,12 +3,15 @@
 .ContentContainer {
    font-family: "Noto Sans JP", sans-serif;
    background: #fff;
+   display: flex;
+   flex-direction: column;
 }
 
 .App-content {
    margin: auto;
    width: 70%;
    color: #292929;
+   min-height: calc(100vh - 18rem);
 
    h1 {
       text-align: center;
@@ -56,6 +59,18 @@
    a:hover {
       background: red;
       color: white;
+   }
+}
+
+.LoadingPage {
+   text-align: center;
+   height: 20rem;
+   display: flex;
+   align-items: center;
+   color: $violet;
+
+   .SpinnerContainer {
+      margin: auto;
    }
 }
 
