@@ -4,11 +4,14 @@ import {
    generateFilenameMap,
    getPrettifiedNameFromFile,
 } from "components/utils/fileUtils";
+import SearchBar from "components/reusable/SearchBar";
+import _ from "lodash";
 
 import styles from "components/Gallery.module.scss";
 
+// creates a map of image name to URL
 const getGalleryImages = (gallery, context) => {
-   let images;
+   let images = new Map();
    if (gallery === GalleryType.MAIN) {
       images = generateFilenameMap(
          require.context("images/stockart/", false, /\.(png|jpe?g|svg|gif)$/)
@@ -28,19 +31,6 @@ const getGalleryImages = (gallery, context) => {
 function Gallery({ type }) {
    const defaultTitle =
       type === GalleryType.ICONS ? "Animated Icons" : "Art Gallery";
-   const [shownImage, setShownImage] = useState(null);
-   const [title, setTitle] = useState(defaultTitle);
-   const [showScrollBottom, setShowScrollBottom] = useState(false);
-   const thumbnailsRef = useRef(null);
-
-   useEffect(() => {
-      if (shownImage) {
-         setShowScrollBottom(
-            thumbnailsRef.current.scrollHeight >
-               thumbnailsRef.current.clientHeight
-         );
-      }
-   }, [shownImage]);
 
    const getContext = (type) => {
       switch (type) {
@@ -59,10 +49,24 @@ function Gallery({ type }) {
             );
       }
    };
-   const images = getGalleryImages(type, getContext(type));
+
+   const fullImagesList = getGalleryImages(type, getContext(type));
+   const [imagesListMap, setImagesListMap] = useState({ ...fullImagesList });
+   const [shownImage, setShownImage] = useState(null);
+   const [title, setTitle] = useState(defaultTitle);
+   const [showScrollBottom, setShowScrollBottom] = useState(false);
+   const thumbnailsRef = useRef(null);
+   useEffect(() => {
+      if (shownImage) {
+         setShowScrollBottom(
+            thumbnailsRef.current.scrollHeight >
+               thumbnailsRef.current.clientHeight
+         );
+      }
+   }, [shownImage]);
 
    const handleThumbnailClick = (e, indexOfFullsize, displayName) => {
-      setShownImage(images[indexOfFullsize]);
+      setShownImage(imagesListMap[indexOfFullsize]);
       setTitle(displayName);
    };
 
@@ -71,11 +75,19 @@ function Gallery({ type }) {
       setTitle(defaultTitle);
    };
 
+   const handleSearchTermChange = (newInput) => {
+      const filteredKeys = Object.keys(fullImagesList).filter((key) =>
+         key.startsWith(newInput)
+      );
+      setImagesListMap(_.pick(fullImagesList, filteredKeys));
+   };
+
    const sidebarClass = shownImage ? styles.Sidebar : "";
 
    return (
       <div className={styles.ContentContainer}>
          <h1>{title}</h1>
+         <SearchBar onInputChange={handleSearchTermChange} />
          <p>Select a thumbnail to view full size.</p>
          <div className={styles.GalleryContainer}>
             {shownImage && (
@@ -91,7 +103,7 @@ function Gallery({ type }) {
                   className={`${styles.ThumbnailContainer} ${sidebarClass}`}
                   ref={thumbnailsRef}
                >
-                  {Object.keys(images)
+                  {Object.keys(imagesListMap)
                      .filter((filename) => filename.includes(THUMB_SUFFIX))
                      .map((thumbnail, i) => {
                         const indexOfFullsize = thumbnail.replace(
@@ -104,7 +116,7 @@ function Gallery({ type }) {
                         return (
                            <Thumbnail
                               key={i}
-                              src={images[thumbnail]}
+                              src={imagesListMap[thumbnail]}
                               displayName={displayName}
                               onClick={(e) =>
                                  handleThumbnailClick(
@@ -129,7 +141,6 @@ function Gallery({ type }) {
          </div>
       </div>
    );
-   // }
 }
 
 function FullsizeImage({ src, handleOnClear, displayName }) {
