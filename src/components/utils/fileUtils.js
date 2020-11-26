@@ -11,14 +11,9 @@ export function generateFilenameMap(r) {
 }
 
 // Populates an array of GalleryImages for all images under a gallery type
-export function getGalleryImages(gallery, type) {
+export function getGalleryImages(type) {
 	// fetch list of images for given gallery type
-	let images;
-	if (gallery === GalleryType.MAIN) {
-		images = generateFilenameMap(getGalleryContext(type));
-	} else if (gallery === GalleryType.ICONS) {
-		images = generateFilenameMap(getGalleryContext(type));
-	}
+	let images = generateFilenameMap(getGalleryContext(type));
 
 	// populate list
 	let currGalleryImage = new GalleryImage();
