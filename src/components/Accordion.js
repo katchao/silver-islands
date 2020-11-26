@@ -2,6 +2,7 @@ import { useState } from "react";
 import CSSTransitionGroup from "react-addons-css-transition-group";
 
 import styles from "components/Accordion.module.scss";
+import animationStyles from "components/utils/animations.scss";
 
 function Accordion(props) {
    const [openStates, setOpenStates] = useState(
