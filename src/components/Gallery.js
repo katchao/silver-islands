@@ -1,13 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
-import { GalleryType } from "components/utils/constants";
+import { GalleryType, THUMB_SUFFIX } from "components/utils/constants";
 import {
    generateFilenameMap,
    getPrettifiedNameFromFile,
 } from "components/utils/fileUtils";
 
 import styles from "components/Gallery.module.scss";
-
-const THUMB_SUFFIX = "_thumb";
 
 const getGalleryImages = (gallery, context) => {
    let images;
@@ -24,6 +22,7 @@ const getGalleryImages = (gallery, context) => {
          )
       );
    }
+   console.log(`images: ${JSON.stringify(images)}`);
    return images;
 };
 
@@ -63,8 +62,8 @@ function Gallery({ type }) {
    };
    const images = getGalleryImages(type, getContext(type));
 
-   const handleThumbnailClick = (e, fullSizeIndex, displayName) => {
-      setShownImage(images[fullSizeIndex]);
+   const handleThumbnailClick = (e, indexOfFullsize, displayName) => {
+      setShownImage(images[indexOfFullsize]);
       setTitle(displayName);
    };
 
@@ -96,13 +95,14 @@ function Gallery({ type }) {
                   {Object.keys(images)
                      .filter((filename) => filename.includes(THUMB_SUFFIX))
                      .map((thumbnail, i) => {
-                        const fullSizeIndex = thumbnail.replace(
+                        const indexOfFullsize = thumbnail.replace(
                            THUMB_SUFFIX,
                            ""
                         );
                         const displayName = getPrettifiedNameFromFile(
-                           fullSizeIndex
+                           indexOfFullsize
                         );
+                        console.log(`indexOfFullsize ${indexOfFullsize}`);
                         return (
                            <Thumbnail
                               key={i}
@@ -111,7 +111,7 @@ function Gallery({ type }) {
                               onClick={(e) =>
                                  handleThumbnailClick(
                                     e,
-                                    fullSizeIndex,
+                                    indexOfFullsize,
                                     displayName
                                  )
                               }
