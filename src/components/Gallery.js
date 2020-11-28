@@ -19,6 +19,7 @@ function Gallery({ type }) {
       type === GalleryType.ICONS ? "Animated Icons" : "Art Gallery";
 
    const completeImagesList = getGalleryImages(type);
+   //debugger;
    const [imagesList, setImagesList] = useState([...completeImagesList]);
    const [shownImage, setShownImage] = useState(null);
    const thumbnailsRef = useRef(null);
