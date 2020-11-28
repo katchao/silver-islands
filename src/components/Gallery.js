@@ -3,7 +3,6 @@ import { GalleryType } from "components/utils/constants";
 import { getGalleryImages } from "components/utils/fileUtils";
 import SearchBar from "components/reusable/SearchBar";
 import Modal from "components/reusable/Modal";
-import _ from "lodash";
 import styles from "./Gallery.module.scss";
 
 export class GalleryImage {
@@ -32,10 +31,10 @@ function Gallery({ type }) {
    };
 
    const handleSearchTermChange = (newInput) => {
-      const filteredKeys = Object.keys(completeImagesList).filter((key) =>
-         key.startsWith(newInput)
+      const newImagesList = completeImagesList.filter((image) =>
+         image.displayName.toLowerCase().startsWith(newInput.toLowerCase())
       );
-      setImagesList(_.pick(completeImagesList, filteredKeys));
+      setImagesList(newImagesList);
    };
 
    return (
