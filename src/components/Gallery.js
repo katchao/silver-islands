@@ -1,4 +1,10 @@
-import React, { useState, useRef } from "react";
+import React, {
+   Component,
+   useState,
+   useRef,
+   useEffect,
+   forwardRef,
+} from "react";
 import { GalleryType } from "components/utils/constants";
 import { getGalleryImages } from "components/utils/fileUtils";
 import SearchBar from "components/reusable/SearchBar";
@@ -47,9 +53,10 @@ function Gallery({ type }) {
                closeModal={handleClose}
                title={shownImage.displayName}
             >
-               <FullsizeImage
-                  src={shownImage.fullsizeSrc}
-                  displayName={shownImage.fullsizeName}
+               <ImageModalView
+                  shownImage={shownImage}
+                  imagesList={imagesList}
+                  handleThumbnailClick={handleThumbnailClick}
                />
             </Modal>
          )}
@@ -74,6 +81,89 @@ function Gallery({ type }) {
    );
 }
 
+// The contents of the modal when you click on the image (includes the full size image and the secondary thumbnail list view)
+function ImageModalView({ shownImage, imagesList, handleThumbnailClick }) {
+   const thumbnailCarouselRef = useRef(null);
+   const selectedThumbnail = useRef(null);
+   const [thumbnailCarouselCanScroll, setThumbnailCarouselCanScroll] = useState(
+      true
+   );
+
+   const scrollThumbnailCarousel = (direction) => {
+      if (direction === "right") {
+         thumbnailCarouselRef.current.scrollLeft +=
+            thumbnailCarouselRef.current.clientWidth - 10;
+      } else {
+         thumbnailCarouselRef.current.scrollLeft -=
+            thumbnailCarouselRef.current.clientWidth - 10;
+      }
+   };
+
+   useEffect(() => {
+      if (selectedThumbnail.current) {
+         selectedThumbnail.current.scrollIntoView({ inline: "center" });
+      }
+
+      setThumbnailCarouselCanScroll(
+         thumbnailCarouselRef.current
+            ? thumbnailCarouselRef.current.scrollWidth >
+                 thumbnailCarouselRef.current.clientWidth
+            : true
+      );
+   });
+
+   const scrollArrowClasses = thumbnailCarouselCanScroll
+      ? `material-icons ${styles.ScrollArrow}`
+      : `material-icons ${styles.DisabledScrollArrow}`;
+
+   return (
+      <div>
+         <FullsizeImage
+            src={shownImage.fullsizeSrc}
+            displayName={shownImage.fullsizeName}
+         />
+         <div className={styles.ModalThumbnailViewContainer}>
+            <div>
+               <i
+                  onClick={() => scrollThumbnailCarousel("left")}
+                  className={scrollArrowClasses}
+               >
+                  arrow_back_ios
+               </i>
+            </div>
+            <div
+               className={styles.ModalThumbnailView}
+               ref={thumbnailCarouselRef}
+            >
+               {imagesList.map((image, i) => {
+                  const selected = image.displayName === shownImage.displayName;
+                  return (
+                     <Thumbnail
+                        key={i}
+                        src={image.thumbnailSrc}
+                        displayName={imagesList.displayName}
+                        onClick={(e) => handleThumbnailClick(e, image)}
+                        selected={selected}
+                     >
+                        {selected && <div ref={selectedThumbnail}> </div>}
+                     </Thumbnail>
+                  );
+               })}
+            </div>
+            <div>
+               <i
+                  onClick={() => scrollThumbnailCarousel("right")}
+                  className={scrollArrowClasses}
+               >
+                  arrow_forward_ios
+               </i>
+            </div>
+         </div>
+      </div>
+   );
+}
+
+// The full size window of the image
 function FullsizeImage({ src, displayName }) {
    // generate a random BG color
    const classNames = [
@@ -94,10 +184,20 @@ function FullsizeImage({ src, displayName }) {
    );
 }
 
-function Thumbnail({ src, onClick, displayName }) {
+// The image thumbnail
+function Thumbnail({ src, onClick, displayName, selected, children }) {
    return (
-      <div className={styles.Thumbnail}>
-         <img src={src} onClick={onClick} alt={`${displayName} Thumbnail`} />
+      <div>
+         <div
+            className={
+               selected
+                  ? `${styles.ThumbnailSelected} ${styles.Thumbnail}`
+                  : `${styles.Thumbnail}`
+            }
+         >
+            <img src={src} onClick={onClick} alt={`${displayName} Thumbnail`} />
+         </div>
+         {children}
       </div>
    );
 }

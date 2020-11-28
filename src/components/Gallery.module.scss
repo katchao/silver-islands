@@ -15,37 +15,38 @@
    overflow: scroll;
    margin: auto;
    text-align: center;
+}
 
-   .Thumbnail {
-      align-items: center;
-      background: #f7f7f7;
-      border: 1px solid #ebebeb;
-      border-radius: 50%;
-      display: flex;
-      height: 100px;
-      justify-content: center;
-      margin: 2px;
-      overflow: hidden;
-      text-align: center;
+.Thumbnail {
+   align-items: center;
+   background: #f7f7f7;
+   border: 1px solid #ebebeb;
+   border-radius: 50%;
+   display: flex;
+   height: 100px;
+   justify-content: center;
+   margin: 2px;
+   overflow: hidden;
+   text-align: center;
+   vertical-align: 50%;
+   width: 100px;
+
+   img {
+      opacity: 0.8;
       vertical-align: 50%;
-      width: 100px;
-
-      img {
-         opacity: 0.8;
-         vertical-align: 50%;
-      }
    }
+}
 
-   .Thumbnail:hover {
-      cursor: pointer;
-      background: #fffa78;
-      border: 2px solid #fada7a;
-      margin: 1px;
+.Thumbnail:hover,
+.ThumbnailSelected {
+   cursor: pointer;
+   background: #fffa78;
+   border: 2px solid #fada7a;
+   margin: 1px;
+   opacity: 1;
+
+   img {
       opacity: 1;
-
-      img {
-         opacity: 1;
-      }
    }
 }
 
@@ -83,6 +84,41 @@
 
       &.Purple {
          background: #f7f0ff;
+      }
+   }
+}
+
+.ModalThumbnailViewContainer {
+   display: flex;
+   align-items: center;
+   margin-top: 2rem;
+
+   .ScrollArrow {
+      font-size: 30px;
+      color: #a6a6a6;
+
+      &:hover {
+         cursor: pointer;
+         color: #707070;
+      }
+   }
+
+   .DisabledScrollArrow {
+      display: none;
+   }
+
+   .ModalThumbnailView {
+      align-items: center;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      height: 100px;
+      width: 100%;
+      padding: 0.3rem;
+      scroll-behavior: smooth;
+
+      .Thumbnail {
+         flex: 0 0 auto;
       }
    }
 }
