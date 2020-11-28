@@ -1,13 +1,13 @@
 {
   "files": {
     "static/css/0.777ba372.chunk.css": "/static/css/0.777ba372.chunk.css",
-    "static/js/0.0b111b2b.chunk.js": "/static/js/0.0b111b2b.chunk.js",
-    "static/js/0.0b111b2b.chunk.js.map": "/static/js/0.0b111b2b.chunk.js.map",
+    "static/js/0.c49099ec.chunk.js": "/static/js/0.c49099ec.chunk.js",
+    "static/js/0.c49099ec.chunk.js.map": "/static/js/0.c49099ec.chunk.js.map",
     "main.css": "/static/css/main.2c67db1d.chunk.css",
     "main.js": "/static/js/main.e6239ea1.chunk.js",
     "main.js.map": "/static/js/main.e6239ea1.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.011a6035.js",
-    "runtime-main.js.map": "/static/js/runtime-main.011a6035.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f3fc69b7.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f3fc69b7.js.map",
     "static/css/3.b416d60a.chunk.css": "/static/css/3.b416d60a.chunk.css",
     "static/js/3.6bb55bda.chunk.js": "/static/js/3.6bb55bda.chunk.js",
     "static/js/3.6bb55bda.chunk.js.map": "/static/js/3.6bb55bda.chunk.js.map",
@@ -64,6 +64,8 @@
     "static/media/7rotation.jpg": "/static/media/7rotation.99823e5e.jpg",
     "static/media/8rotationoutline.jpg": "/static/media/8rotationoutline.89f9e042.jpg",
     "static/media/9outline.jpg": "/static/media/9outline.6e945491.jpg",
+    "static/media/Bboss_squirtle.gif": "/static/media/Bboss_squirtle.85744995.gif",
+    "static/media/Bboss_squirtle_thumb.gif": "/static/media/Bboss_squirtle_thumb.a74b7589.gif",
     "static/media/aerodactyl.png": "/static/media/aerodactyl.f28fbd8e.png",
     "static/media/aerodactyl_thumb.png": "/static/media/aerodactyl_thumb.5efbf094.png",
     "static/media/ampharos.png": "/static/media/ampharos.2ca80b49.png",
@@ -79,8 +81,6 @@
     "static/media/bidoof.gif": "/static/media/bidoof.35f408de.gif",
     "static/media/bidoof_thumb.gif": "/static/media/bidoof_thumb.b673f929.gif",
     "static/media/boss_squirtle.gif": "/static/media/boss_squirtle.c02fd874.gif",
-    "static/media/boss_squirtleB.gif": "/static/media/boss_squirtleB.85744995.gif",
-    "static/media/boss_squirtleB_thumb.gif": "/static/media/boss_squirtleB_thumb.a74b7589.gif",
     "static/media/boss_squirtle_thumb.gif": "/static/media/boss_squirtle_thumb.f97c9cf8.gif",
     "static/media/bulbasaur.gif": "/static/media/bulbasaur.962bafd9.gif",
     "static/media/bulbasaur_thumb.gif": "/static/media/bulbasaur_thumb.1bd9cbec.gif",
@@ -191,7 +191,7 @@
     "static/media/wailmer_thumb.png": "/static/media/wailmer_thumb.c285187e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.011a6035.js",
+    "static/js/runtime-main.f3fc69b7.js",
     "static/js/4.ed8900ef.chunk.js",
     "static/css/main.2c67db1d.chunk.css",
     "static/js/main.e6239ea1.chunk.js"
