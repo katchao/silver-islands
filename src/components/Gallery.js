@@ -1,15 +1,10 @@
-import React, {
-   Component,
-   useState,
-   useRef,
-   useEffect,
-   forwardRef,
-} from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { GalleryType } from "components/utils/constants";
 import { getGalleryImages } from "components/utils/fileUtils";
 import SearchBar from "components/reusable/SearchBar";
 import Modal from "components/reusable/Modal";
 import styles from "./Gallery.module.scss";
+import ClipLoader from "react-spinners/ClipLoader";
 
 export class GalleryImage {
    fullsizeName: string;
@@ -110,7 +105,7 @@ function ImageModalView({ shownImage, imagesList, handleThumbnailClick }) {
                  thumbnailCarouselRef.current.clientWidth
             : true
       );
-   });
+   }, [setThumbnailCarouselCanScroll]);
 
    const scrollArrowClasses = thumbnailCarouselCanScroll
       ? `material-icons ${styles.ScrollArrow}`
@@ -165,6 +160,7 @@ function ImageModalView({ shownImage, imagesList, handleThumbnailClick }) {
 
 // The full size window of the image
 function FullsizeImage({ src, displayName }) {
+   const [loading, setLoading] = useState(true);
    // generate a random BG color
    const classNames = [
       styles.Blue,
@@ -177,8 +173,9 @@ function FullsizeImage({ src, displayName }) {
 
    return (
       <div className={styles.FullsizeImage}>
+         {loading && <ClipLoader size={100} color={"#ea1fa9"} />}
          <div className={`${styles.FullsizeImageInner} ${bgColor}`}>
-            <img src={src} alt={displayName} />
+            <img src={src} alt={displayName} onLoad={() => setLoading(false)} />
          </div>
       </div>
    );
