@@ -5,7 +5,7 @@ import { GalleryImage } from "components/Gallery";
 export function generateFilenameMap(r) {
     let filenameMap = {};
     r.keys().forEach((filename) => {
-        filenameMap[filename.replace("./", "")] = r(filename);
+        filenameMap[filename.replace("./", "")] = r(filename).default;
     });
     return filenameMap;
 }
